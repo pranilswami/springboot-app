@@ -1,11 +1,7 @@
 package com.app.entity.cars;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "car_image")
 public class CarImage {
@@ -28,17 +24,17 @@ public class CarImage {
         this.id = id;
     }
 
-    public Car getCar() {
-        return car;
-    }
+//    public Car getCar() {
+//        return car;
+//    }
 
     public void setCar(Car car) {
         this.car = car;
     }
 
-    public String getUrl() {
-        return url;
-    }
+//    public String getUrl() {
+//        return url;
+//    }
 
     public void setUrl(String url) {
         this.url = url;

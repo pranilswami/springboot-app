@@ -1,11 +1,8 @@
 package com.app.entity.evaluation;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "car_detailed_evaluation")
 public class CarDetailedEvaluation {
@@ -28,19 +25,19 @@ public class CarDetailedEvaluation {
         this.id = id;
     }
 
-    public Integer getKms() {
-        return kms;
-    }
-
-    public void setKms(Integer kms) {
-        this.kms = kms;
-    }
-
-    public Integer getYearOfManufacturing() {
-        return yearOfManufacturing;
-    }
-
-    public void setYearOfManufacturing(Integer yearOfManufacturing) {
-        this.yearOfManufacturing = yearOfManufacturing;
-    }
+//    public Integer getKms() {
+//        return kms;
+//    }
+//
+//    public void setKms(Integer kms) {
+//        this.kms = kms;
+//    }
+//
+//    public Integer getYearOfManufacturing() {
+//        return yearOfManufacturing;
+//    }
+//
+//    public void setYearOfManufacturing(Integer yearOfManufacturing) {
+//        this.yearOfManufacturing = yearOfManufacturing;
+//    }
 }

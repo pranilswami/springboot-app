@@ -1,11 +1,7 @@
 package com.app.entity.cars;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "brands")
 public class Brand {
@@ -25,9 +21,9 @@ public class Brand {
         this.id = id;
     }
 
-    public String getBrandName() {
-        return brandName;
-    }
+//    public String getBrandName() {
+//        return brandName;
+//    }
 
     public void setBrandName(String brandName) {
         this.brandName = brandName;

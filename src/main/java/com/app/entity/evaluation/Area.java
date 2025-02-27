@@ -1,11 +1,7 @@
 package com.app.entity.evaluation;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "area")
 public class Area {
@@ -29,17 +25,17 @@ public class Area {
         this.id = id;
     }
 
-    public Integer getPinCode() {
-        return pinCode;
-    }
+//    public Integer getPinCode() {
+//        return pinCode;
+//    }
 
     public void setPincode(Integer pincode) {
         this.pinCode = pincode;
     }
 
-    public Agent getAgent() {
-        return agent;
-    }
+//    public Agent getAgent() {
+//        return agent;
+//    }
 
     public void setAgent(Agent agent) {
         this.agent = agent;

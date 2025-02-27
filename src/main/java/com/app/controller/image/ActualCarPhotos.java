@@ -1,9 +1,7 @@
 package com.app.controller.image;
 
 import com.app.entity.cars.Car;
-import com.app.entity.cars.CarImage;
 import com.app.entity.evaluation.CarEvaluationPhotos;
-import com.app.repository.carRepo.CarImageRepository;
 import com.app.repository.carRepo.CarRepository;
 import com.app.repository.evaluation.CarEvaluationPhotosRepository;
 import com.app.service.BucketService;
@@ -34,7 +32,7 @@ public class ActualCarPhotos {
     public ResponseEntity<List<CarEvaluationPhotos>> uploadMultiplePhotosOfCar(@RequestParam List<MultipartFile> files,
                                                                     @PathVariable String bucketName,
                                                                     @PathVariable Long carId){
-        Car car = carRepo.findById(carId).orElseThrow(()->new RuntimeException("Car with given id is not present : "+carId));
+        carRepo.findById(carId).orElseThrow(()->new RuntimeException("Car with given id is not present : "+carId));
         List<CarEvaluationPhotos> images = new ArrayList<>();
         for(MultipartFile file : files){
             String url = bucketService.uploadFile(file, bucketName);

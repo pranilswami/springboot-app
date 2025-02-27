@@ -1,11 +1,7 @@
 package com.app.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "user")
 public class User {
@@ -79,11 +75,11 @@ public class User {
         return password;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
+//    public String getMobile() {
+//        return mobile;
+//    }
+//
+//    public void setMobile(String mobile) {
+//        this.mobile = mobile;
+//    }
 }

@@ -1,14 +1,11 @@
 package com.app.entity.evaluation;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "customer_visit")
 public class CustomerVisit {
@@ -52,41 +49,41 @@ public class CustomerVisit {
         this.name = name;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public Integer getPinCode() {
-        return pinCode;
-    }
-
-    public void setPinCode(Integer pinCode) {
-        this.pinCode = pinCode;
-    }
-
-    public LocalDate getDateOfVisit() {
-        return dateOfVisit;
-    }
-
-    public void setDateOfVisit(LocalDate dateOfVisit) {
-        this.dateOfVisit = dateOfVisit;
-    }
-
-    public LocalTime getTimeOfVisit() {
-        return timeOfVisit;
-    }
-
-    public void setTimeOfVisit(LocalTime timeOfVisit) {
-        this.timeOfVisit = timeOfVisit;
-    }
-
-    public Agent getAgent() {
-        return agent;
-    }
+//    public String getMobile() {
+//        return mobile;
+//    }
+//
+//    public void setMobile(String mobile) {
+//        this.mobile = mobile;
+//    }
+//
+//    public Integer getPinCode() {
+//        return pinCode;
+//    }
+//
+//    public void setPinCode(Integer pinCode) {
+//        this.pinCode = pinCode;
+//    }
+//
+//    public LocalDate getDateOfVisit() {
+//        return dateOfVisit;
+//    }
+//
+//    public void setDateOfVisit(LocalDate dateOfVisit) {
+//        this.dateOfVisit = dateOfVisit;
+//    }
+//
+//    public LocalTime getTimeOfVisit() {
+//        return timeOfVisit;
+//    }
+//
+//    public void setTimeOfVisit(LocalTime timeOfVisit) {
+//        this.timeOfVisit = timeOfVisit;
+//    }
+//
+//    public Agent getAgent() {
+//        return agent;
+//    }
 
     public void setAgent(Agent agent) {
         this.agent = agent;

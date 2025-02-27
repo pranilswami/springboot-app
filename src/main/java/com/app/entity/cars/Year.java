@@ -1,11 +1,9 @@
 package com.app.entity.cars;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
+
 @Entity
 @Table(name = "year")
 public class Year {
@@ -25,9 +23,9 @@ public class Year {
         this.id = id;
     }
 
-    public String getYear() {
-        return year;
-    }
+//    public String getYear() {
+//        return year;
+//    }
 
     public void setYear(String year) {
         this.year = year;

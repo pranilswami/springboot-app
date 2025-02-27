@@ -11,8 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
 @RestController
@@ -35,7 +34,7 @@ public class ImageController {
                                                     @PathVariable Long carId) {
         String url = bucketService.uploadFile(file, bucketName);
         Optional<Car> opCar = carRepo.findById(carId);
-        CarImage image = null;
+        CarImage image = new CarImage();
         if (opCar.isPresent()) {
             Car car = opCar.get();
             image = new CarImage();

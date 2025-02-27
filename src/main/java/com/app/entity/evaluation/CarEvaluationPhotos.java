@@ -1,11 +1,8 @@
 package com.app.entity.evaluation;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "car_evaluation_photos")
 public class CarEvaluationPhotos {

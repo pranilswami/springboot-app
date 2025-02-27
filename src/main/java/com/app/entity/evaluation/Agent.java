@@ -1,11 +1,8 @@
 package com.app.entity.evaluation;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "agent")
 public class Agent {
@@ -39,17 +36,17 @@ public class Agent {
         this.name = name;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
+//    public String getMobile() {
+//        return mobile;
+//    }
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
-    public String getEmail() {
-        return email;
-    }
+//    public String getEmail() {
+//        return email;
+//    }
 
     public void setEmail(String email) {
         this.email = email;

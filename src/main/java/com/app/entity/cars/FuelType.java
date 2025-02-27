@@ -1,11 +1,7 @@
 package com.app.entity.cars;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "fuel_type")
 public class FuelType {
@@ -25,9 +21,9 @@ public class FuelType {
         this.id = id;
     }
 
-    public String getFuelType() {
-        return fuelType;
-    }
+//    public String getFuelType() {
+//        return fuelType;
+//    }
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
