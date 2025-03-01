@@ -4,7 +4,7 @@ import com.app.entity.evaluation.Agent;
 
 public class AreaDto {
     private Integer pinCode;
-    private Agent agent;
+    private Long agent;
 
     public Integer getPinCode() {
         return pinCode;
@@ -14,11 +14,11 @@ public class AreaDto {
         this.pinCode = pinCode;
     }
 
-    public Agent getAgent() {
+    public Long getAgent() {
         return agent;
     }
 
-    public void setAgent(Agent agent) {
+    public void setAgent(Long agent) {
         this.agent = agent;
     }
 }

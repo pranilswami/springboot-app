@@ -41,9 +41,10 @@ public class EvaluationService {
         if(opArea.isPresent()){
             throw new RuntimeException(("AREA WITH GIVEN PIN-CODE IS ALREADY EXISTS"));
         }
+        Agent agent = agentRepo.findById(areaDto.getAgent()).orElseThrow(()->new RuntimeException("AGENT NOT FOUND WITH GIVEN ID"));
         Area area = new Area();
         area.setPincode(areaDto.getPinCode());
-        area.setAgent(areaDto.getAgent());
+        area.setAgent(agent);
         areaRepo.save(area);
         return "Area added successfully";
     }
