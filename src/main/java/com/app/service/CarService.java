@@ -129,14 +129,15 @@ public class CarService {
     }
 
     public String addCarStatus(CarStatusDto carStatusDto) {
-       Optional<CarStatus> opCarstatus = carStatusRepository.findByName(carStatusDto.getStatus());
-       if(opCarstatus.isPresent()){
-           throw new RuntimeException("STATUS IS ALREADY EXISTS");
-       }
-       CarStatus carStatus = new CarStatus();
-       carStatus.setStatus(carStatusDto.getStatus());
-       carStatusRepository.save(carStatus);
-       return "Car Status added successfully!";
+
+        Optional<CarStatus> opCarstatus = carStatusRepository.findByName(carStatusDto.getStatus());
+        if(opCarstatus.isPresent()){
+            throw new RuntimeException("STATUS IS ALREADY EXISTS");
+        }
+        CarStatus carStatus = new CarStatus();
+        carStatus.setStatus(carStatusDto.getStatus());
+        carStatusRepository.save(carStatus);
+        return "Car Status added successfully!";
     }
 
     public List<Car> getCarsByStatus(String status) {
@@ -149,5 +150,9 @@ public class CarService {
         car.setCarStatus(status);
         carRepo.save(car);
         return "Car booked successfully!";
+    }
+
+    public List<Car> getCarsByBrands(List<String> brands) {
+        return carRepo.findByBrandNameIN(brands,1L);
     }
 }

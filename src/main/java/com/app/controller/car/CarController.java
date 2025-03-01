@@ -12,8 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/cars")
-public class
-CarController {
+public class CarController {
     private final CarService carService;
 
     @Autowired
@@ -80,10 +79,17 @@ CarController {
         List<Car> carList = carService.getCarsByStatus(status);
         return new ResponseEntity<>(carList,HttpStatus.OK);
     }
+
     @PutMapping("/book-car")
     public ResponseEntity<String> bookCar(@RequestParam Long carId){
         String status = carService.bookCar(carId);
         return new ResponseEntity<>(status,HttpStatus.OK);
+    }
+
+    @GetMapping("/get-cars-by-brands")
+    public ResponseEntity<List<Car>> getCarsByBrand(@RequestParam List<String> brands){
+        List<Car> carList = carService.getCarsByBrands(brands);
+        return new ResponseEntity<>(carList,HttpStatus.OK);
     }
 
 }
