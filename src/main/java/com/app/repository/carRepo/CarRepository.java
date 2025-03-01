@@ -14,4 +14,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     @Query("SELECT c FROM Car c WHERE c.year.year >= :year")
     List<Car> findCarsByParam(@Param("year") int year);
 
+    @Query("SELECT c FROM Car c WHERE c.carStatus.status = :status")
+    List<Car> findCarIdsByStatus(@Param("status") String status);
+
 }

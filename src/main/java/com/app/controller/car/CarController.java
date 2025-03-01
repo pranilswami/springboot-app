@@ -53,12 +53,7 @@ CarController {
 
     @PostMapping("/addCar")
     public ResponseEntity<?> addCar(@RequestBody CarDto carDto){
-        String status = carService.addCar(carDto.getBrandId(),
-                        carDto.getFuelTypeId(),
-                        carDto.getModelId(),
-                        carDto.getTransmissionId(),
-                        carDto.getYearId());
-
+        String status = carService.addCar(carDto);
         return new ResponseEntity<>(status,HttpStatus.CREATED);
     }
 
@@ -73,4 +68,22 @@ CarController {
         List<Car> carList = carService.getByName(param);
         return new ResponseEntity<>(carList,HttpStatus.OK);
     }
+
+    @PostMapping("/add-Status")
+    public ResponseEntity<String> addStatus(@RequestBody CarStatusDto carStatusDto){
+        String status = carService.addCarStatus(carStatusDto);
+        return new ResponseEntity<>(status,HttpStatus.CREATED);
+    }
+
+    @GetMapping("/get-cars-by-status")
+    public ResponseEntity<List<Car>> getCarsByStatus(@RequestParam String status){
+        List<Car> carList = carService.getCarsByStatus(status);
+        return new ResponseEntity<>(carList,HttpStatus.OK);
+    }
+    @PutMapping("/book-car")
+    public ResponseEntity<String> bookCar(@RequestParam Long carId){
+        String status = carService.bookCar(carId);
+        return new ResponseEntity<>(status,HttpStatus.OK);
+    }
+
 }

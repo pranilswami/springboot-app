@@ -30,6 +30,10 @@ public class Car {
     @JoinColumn(name = "year_id")
     private Year year;
 
+    @OneToOne   // One Car can have the one Status
+    @JoinColumn(name = "car_status_id")   // Foreign key in Car table
+    private CarStatus carStatus;
+
     public Long getId() {
         return id;
     }
@@ -38,43 +42,51 @@ public class Car {
         this.id = id;
     }
 
-//    public Brand getBrand() {
-//        return brand;
-//    }
+    public Brand getBrand() {
+        return brand;
+    }
 
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
 
-//    public FuelType getFuelType() {
-//        return fuelType;
-//    }
+    public FuelType getFuelType() {
+        return fuelType;
+    }
 
     public void setFuelType(FuelType fuelType) {
         this.fuelType = fuelType;
     }
 
-//    public Model getModel() {
-//        return model;
-//    }
+    public Model getModel() {
+        return model;
+    }
 
     public void setModel(Model model) {
         this.model = model;
     }
 
-//    public Transmission getTransmission() {
-//        return transmission;
-//    }
+    public Transmission getTransmission() {
+        return transmission;
+    }
 
     public void setTransmission(Transmission transmission) {
         this.transmission = transmission;
     }
 
-//    public Year getYear() {
-//        return year;
-//    }
+    public Year getYear() {
+        return year;
+    }
 
     public void setYear(Year year) {
         this.year = year;
+    }
+
+    public CarStatus getCarStatus() {
+        return carStatus;
+    }
+
+    public void setCarStatus(CarStatus carStatus) {
+        this.carStatus = carStatus;
     }
 }

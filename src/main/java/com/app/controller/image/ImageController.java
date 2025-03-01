@@ -37,7 +37,6 @@ public class ImageController {
         CarImage image = new CarImage();
         if (opCar.isPresent()) {
             Car car = opCar.get();
-            image = new CarImage();
             image.setUrl(url);
             image.setCar(car);
             imageRepo.save(image);

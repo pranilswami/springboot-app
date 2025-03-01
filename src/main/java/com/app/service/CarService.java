@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +23,9 @@ public class CarService {
     private final ModelRepository modelRepo;
     private final YearRepository yearRepo;
     private final CarRepository carRepo;
+    private final CarStatusRepository carStatusRepository;
 
-    @Autowired
-    public CarService(BrandRepository brandRepo, ModelMapper modelMapper, FuelTypeRepository fuelTypeRepo, TransmissionRepository transmissionRepo, ModelRepository modelRepo, YearRepository yearRepo, CarRepository carRepo) {
+    public CarService(BrandRepository brandRepo, ModelMapper modelMapper, FuelTypeRepository fuelTypeRepo, TransmissionRepository transmissionRepo, ModelRepository modelRepo, YearRepository yearRepo, CarRepository carRepo, CarStatusRepository carStatusRepository) {
         this.brandRepo = brandRepo;
         this.modelMapper = modelMapper;
         this.fuelTypeRepo = fuelTypeRepo;
@@ -32,6 +33,7 @@ public class CarService {
         this.modelRepo = modelRepo;
         this.yearRepo = yearRepo;
         this.carRepo = carRepo;
+        this.carStatusRepository = carStatusRepository;
     }
 
     public String addCarBrand(BrandDto brandDto){
@@ -93,12 +95,14 @@ public class CarService {
         return modelMapper.map(brandDto, Brand.class);
     }
 
-    public String addCar(Long brandId, Long fuelTypeId, Long modelId, Long transmissionId, Long yearId) {
-        Brand brand = brandRepo.findById(brandId).orElseThrow(()->new ResourceNotFoundException("Brand not found"));
-        Model model = modelRepo.findById(modelId).orElseThrow(()->new ResourceNotFoundException("Model not found"));
-        Transmission transmission = transmissionRepo.findById(transmissionId).orElseThrow(()->new ResourceNotFoundException("Transmission not found"));
-        FuelType fuelType = fuelTypeRepo.findById(fuelTypeId).orElseThrow(()->new ResourceNotFoundException("FuelType not found"));
-        Year year = yearRepo.findById(fuelTypeId).orElseThrow(()->new ResourceNotFoundException("Year not found"));
+    public String addCar(CarDto carDto){
+
+        Brand brand = brandRepo.findById(carDto.getBrandId()).orElseThrow(()->new ResourceNotFoundException("Brand not found"));
+        Model model = modelRepo.findById(carDto.getModelId()).orElseThrow(()->new ResourceNotFoundException("Model not found"));
+        Transmission transmission = transmissionRepo.findById(carDto.getTransmissionId()).orElseThrow(()->new ResourceNotFoundException("Transmission not found"));
+        FuelType fuelType = fuelTypeRepo.findById(carDto.getFuelTypeId()).orElseThrow(()->new ResourceNotFoundException("FuelType not found"));
+        Year year = yearRepo.findById(carDto.getYearId()).orElseThrow(()->new ResourceNotFoundException("Year not found"));
+        CarStatus status = carStatusRepository.findById(1L).orElseThrow(()->new RuntimeException("Status not found"));
 
         Car car = new Car();
         car.setBrand(brand);
@@ -106,6 +110,7 @@ public class CarService {
         car.setYear(year);
         car.setModel(model);
         car.setTransmission(transmission);
+        car.setCarStatus(status);
         carRepo.save(car);
         return "Car added successfully";
     }
@@ -121,5 +126,28 @@ public class CarService {
         }catch (NumberFormatException e){
             return carRepo.findCarsByParam(param);
         }
+    }
+
+    public String addCarStatus(CarStatusDto carStatusDto) {
+       Optional<CarStatus> opCarstatus = carStatusRepository.findByName(carStatusDto.getStatus());
+       if(opCarstatus.isPresent()){
+           throw new RuntimeException("STATUS IS ALREADY EXISTS");
+       }
+       CarStatus carStatus = new CarStatus();
+       carStatus.setStatus(carStatusDto.getStatus());
+       carStatusRepository.save(carStatus);
+       return "Car Status added successfully!";
+    }
+
+    public List<Car> getCarsByStatus(String status) {
+        return carRepo.findCarIdsByStatus(status);
+    }
+
+    public String bookCar(Long carId) {
+        Car car = carRepo.findById(carId).orElseThrow(()->new RuntimeException("Car not found with given id"));
+        CarStatus status = carStatusRepository.findById(2L).orElseThrow(()->new RuntimeException("Status not found"));
+        car.setCarStatus(status);
+        carRepo.save(car);
+        return "Car booked successfully!";
     }
 }

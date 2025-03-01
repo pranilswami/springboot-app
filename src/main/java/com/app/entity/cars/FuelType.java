@@ -21,9 +21,9 @@ public class FuelType {
         this.id = id;
     }
 
-//    public String getFuelType() {
-//        return fuelType;
-//    }
+    public String getFuelType() {
+        return fuelType;
+    }
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;

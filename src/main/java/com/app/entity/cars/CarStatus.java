@@ -2,16 +2,25 @@ package com.app.entity.cars;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "transmission")
-public class Transmission {
+public class CarStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "type", nullable = false)
-    private String type;
+    @Column(name = "status", nullable = false)
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Long getId() {
         return id;
@@ -21,11 +30,4 @@ public class Transmission {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }
