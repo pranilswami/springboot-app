@@ -1,4 +1,4 @@
-package com.app.payload;
+package com.app.payload.auth;
 
 public class JWTTokenDto {
     private String token;

@@ -1,4 +1,4 @@
-package com.app.service;
+package com.app.service.aws;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.AmazonS3Exception;

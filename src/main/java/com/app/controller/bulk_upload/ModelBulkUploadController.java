@@ -2,7 +2,7 @@ package com.app.controller.bulk_upload;
 
 import com.app.entity.cars.Model;
 import com.app.repository.carRepo.ModelRepository;
-import com.app.service.bulk_upload_services.BulkUploadModelNameService;
+import com.app.service.bulkUpload.BulkUploadModelNameService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

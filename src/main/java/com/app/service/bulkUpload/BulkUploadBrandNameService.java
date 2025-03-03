@@ -1,4 +1,4 @@
-package com.app.service.bulk_upload_services;
+package com.app.service.bulkUpload;
 
 import com.app.entity.cars.Brand;
 import org.apache.poi.ss.usermodel.Row;

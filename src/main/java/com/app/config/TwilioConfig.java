@@ -1,6 +1,6 @@
 package com.app.config;
 
-import com.app.service.SmsService;
+import com.app.service.evaluation.SmsService;
 import com.twilio.Twilio;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

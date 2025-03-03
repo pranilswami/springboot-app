@@ -3,7 +3,7 @@ package com.app.controller.evaluation;
 import com.app.payload.evaluation.AgentDto;
 import com.app.payload.evaluation.AreaDto;
 import com.app.payload.evaluation.CustomerVisitDto;
-import com.app.service.EvaluationService;
+import com.app.service.evaluation.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

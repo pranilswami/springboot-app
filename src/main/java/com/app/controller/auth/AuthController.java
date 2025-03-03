@@ -1,12 +1,12 @@
 package com.app.controller.auth;
 
 import com.app.entity.User;
-import com.app.payload.JWTTokenDto;
-import com.app.payload.LoginDto;
+import com.app.payload.auth.JWTTokenDto;
+import com.app.payload.auth.LoginDto;
 import com.app.repository.UserRepository;
-import com.app.service.JWTService;
-import com.app.service.OTPService;
-import com.app.service.UserService;
+import com.app.service.auth.JWTService;
+import com.app.service.auth.OTPService;
+import com.app.service.auth.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.app.payload;
+package com.app.payload.auth;
 
 public class OTPDetails {
     private final String otp;

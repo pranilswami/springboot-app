@@ -2,7 +2,7 @@ package com.app.config;
 
 import com.app.entity.User;
 import com.app.repository.UserRepository;
-import com.app.service.JWTService;
+import com.app.service.auth.JWTService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

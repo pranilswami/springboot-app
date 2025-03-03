@@ -1,7 +1,5 @@
 package com.app;
 
-import com.app.config.TwilioConfig;
-import com.app.service.SmsService;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

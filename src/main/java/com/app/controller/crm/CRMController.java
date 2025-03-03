@@ -6,7 +6,7 @@ import com.app.entity.evaluation.CustomerVisit;
 import com.app.repository.evaluation.AgentRepository;
 import com.app.repository.evaluation.AreaRepository;
 import com.app.repository.evaluation.CustomerVisitRepository;
-import com.app.service.SmsService;
+import com.app.service.evaluation.SmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

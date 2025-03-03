@@ -1,7 +1,7 @@
-package com.app.service;
+package com.app.service.auth;
 
 import com.app.entity.User;
-import com.app.payload.OTPDetails;
+import com.app.payload.auth.OTPDetails;
 import com.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

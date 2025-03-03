@@ -1,11 +1,10 @@
-package com.app.service;
+package com.app.service.auth;
 
 import com.app.entity.User;
-import com.app.payload.LoginDto;
+import com.app.payload.auth.LoginDto;
 import com.app.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
-import com.app.service.JWTService;
 
 import java.util.Optional;
 

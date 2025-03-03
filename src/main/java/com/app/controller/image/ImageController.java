@@ -4,7 +4,7 @@ import com.app.entity.cars.Car;
 import com.app.entity.cars.CarImage;
 import com.app.repository.carRepo.CarImageRepository;
 import com.app.repository.carRepo.CarRepository;
-import com.app.service.BucketService;
+import com.app.service.aws.BucketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

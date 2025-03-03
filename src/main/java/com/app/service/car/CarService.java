@@ -1,14 +1,12 @@
-package com.app.service;
+package com.app.service.car;
 
 import com.app.entity.cars.*;
 import com.app.exception.ResourceNotFoundException;
 import com.app.payload.carDto.*;
 import com.app.repository.carRepo.*;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,10 +1,9 @@
 package com.app.controller.image;
 
-import com.app.entity.cars.Car;
 import com.app.entity.evaluation.CarEvaluationPhotos;
 import com.app.repository.carRepo.CarRepository;
 import com.app.repository.evaluation.CarEvaluationPhotosRepository;
-import com.app.service.BucketService;
+import com.app.service.aws.BucketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
