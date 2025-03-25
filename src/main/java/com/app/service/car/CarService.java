@@ -127,7 +127,6 @@ public class CarService {
     }
 
     public String addCarStatus(CarStatusDto carStatusDto) {
-
         Optional<CarStatus> opCarstatus = carStatusRepository.findByName(carStatusDto.getStatus());
         if(opCarstatus.isPresent()){
             throw new RuntimeException("STATUS IS ALREADY EXISTS");

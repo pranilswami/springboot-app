@@ -10,5 +10,4 @@ import java.util.Optional;
 public interface CarStatusRepository extends JpaRepository<CarStatus, Long> {
     @Query("SELECT c FROM CarStatus c WHERE c.status =:statusName")
     Optional<CarStatus> findByName(@Param("statusName") String statusName);
-
 }
